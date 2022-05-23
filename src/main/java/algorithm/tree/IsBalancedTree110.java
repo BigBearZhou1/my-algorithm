@@ -2,6 +2,13 @@ package algorithm.tree;
 
 import algorithm.entity.TreeNode;
 
+/**
+ * 题目：110. 平衡二叉树
+ * 解题思路：
+ * 1. 递归左右字树
+ * 2. 记录左右子树的高度和是否是平衡树
+ * 3. 本节点的两颗子树要判断高度是否相差小于1
+ */
 public class IsBalancedTree110 {
     class BackInfo {
         int size;
