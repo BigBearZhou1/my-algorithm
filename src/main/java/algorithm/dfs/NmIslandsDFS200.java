@@ -10,7 +10,7 @@ package algorithm.dfs;
  * 5.当周围都是0，就代表这个岛已经找完了
  * 6.接着遍历矩阵，找下一块陆地，重复dfs
  */
-public class NmIslands200 {
+public class NmIslandsDFS200 {
     public int numsIslands(char[][] grid) {
         int num = 0;
         int m = grid.length;
