@@ -58,18 +58,14 @@ public class UnionFind<V> {
         Node<V> fx = findFather(nodeX);
         Node<V> fy = findFather(nodeY);
 
-        if(fx == fy){
+        if (fx == fy) {
             return;
         }
 
-        if (sizeMap.get(fx) > sizeMap.get(fy)) {
-            parents.put(fx, fy);
-            sizeMap.put(fx, sizeMap.get(fx) + sizeMap.get(fy));
-            sizeMap.remove(fy);
-        } else {
-            parents.put(fy, fx);
-            sizeMap.put(fy, sizeMap.get(fy) + sizeMap.get(fx));
-            sizeMap.remove(fx);
-        }
+        Node<V> big = sizeMap.get(fx) > sizeMap.get(fy) ? fx : fy;
+        Node<V> small = big == fx ? fy : fx;
+        parents.put(big,small);
+        sizeMap.put(big,sizeMap.get(fx)+sizeMap.get(fy));
+        sizeMap.remove(small);
     }
 }
