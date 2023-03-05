@@ -68,4 +68,8 @@ public class UnionFind<V> {
         sizeMap.put(big,sizeMap.get(fx)+sizeMap.get(fy));
         sizeMap.remove(small);
     }
+
+    public int setSize(){
+        return this.parents.size();
+    }
 }
